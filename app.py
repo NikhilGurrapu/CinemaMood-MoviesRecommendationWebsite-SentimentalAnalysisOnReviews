@@ -7,6 +7,7 @@ import nltk
 import re
 from nltk.stem import PorterStemmer
 from nltk.corpus import stopwords
+nltk.download('stopwords')
 
 st.set_page_config(layout="wide")
 
