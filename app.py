@@ -3,6 +3,7 @@ import pickle
 import pandas as pd
 import requests
 import sklearn
+import nltk
 import re
 from nltk.stem import PorterStemmer
 from nltk.corpus import stopwords
