@@ -2,6 +2,9 @@ import streamlit as st
 import pickle
 import pandas as pd
 import requests
+from scipy.sparse import csr_matrix
+import warnings
+warnings.filterwarnings("ignore", message="Trying to unpickle estimator TfidfTransformer from version 0.24.2 when using version 1.2.2.")
 import sklearn
 import nltk
 import re
@@ -168,7 +171,7 @@ if st.button('Search'):
     if len(r_author)>0:
         positive = []
         negative = []
-        save_cv = pickle.load(open("count_vectorizer.pkl", "rb"))
+        save_cv = pickle.load(open("count_vectorizer.pkl", "rb"), fix_imports=True)
         model = pickle.load(open("movies_review_classification.pkl", "rb"))
         ps = PorterStemmer()
         corpus = []
